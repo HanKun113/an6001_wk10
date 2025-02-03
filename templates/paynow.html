@@ -11,6 +11,9 @@
         
         <button class="btn" onclick="transfer()">Transfer</button>
         <button class="btn" onclick="transaction()">Transaction</button>
+        <form action="/main" method="post">
+            <p><input type="submit" value="Main"></p>
+        </form>
         
         <p id="view_payer"></p>
         <p id="view_payee"></p>
@@ -19,7 +22,7 @@
         <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
         <script>
             const contractAddress = "0xfb2fd20b2ef10a9076390d19ef26636d6364fa4d";
-                const contractABI = [
+            const contractABI = [
             {
                 "inputs": [],
                 "stateMutability": "nonpayable",
@@ -71,8 +74,7 @@
                 "stateMutability": "view",
                 "type": "function"
             }
-        
-];
+            ];
             const web3 = new Web3(Web3.givenProvider);
             const contract = new web3.eth.Contract(contractABI, contractAddress);
         
